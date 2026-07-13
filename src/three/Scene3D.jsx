@@ -143,9 +143,9 @@ function ScrollController({ scrollProgress, activeStyle }) {
     if (!currentConfig || !nextConfig) return
 
     // Interpolate positions
-    const posX = THREE.MathUtils.lerp(currentConfig.position[0], nextConfig.position[0], progressInSec)
-    const posY = THREE.MathUtils.lerp(currentConfig.position[1], nextConfig.position[1], progressInSec)
-    const posZ = THREE.MathUtils.lerp(currentConfig.position[2], nextConfig.position[2], progressInSec)
+    let posX = THREE.MathUtils.lerp(currentConfig.position[0], nextConfig.position[0], progressInSec)
+    let posY = THREE.MathUtils.lerp(currentConfig.position[1], nextConfig.position[1], progressInSec)
+    let posZ = THREE.MathUtils.lerp(currentConfig.position[2], nextConfig.position[2], progressInSec)
 
     // Interpolate rotations
     const rotX = THREE.MathUtils.lerp(currentConfig.rotation[0], nextConfig.rotation[0], progressInSec)
@@ -153,9 +153,26 @@ function ScrollController({ scrollProgress, activeStyle }) {
     const rotZ = THREE.MathUtils.lerp(currentConfig.rotation[2], nextConfig.rotation[2], progressInSec)
 
     // Interpolate scales
-    const scaleX = THREE.MathUtils.lerp(currentConfig.scale[0], nextConfig.scale[0], progressInSec)
-    const scaleY = THREE.MathUtils.lerp(currentConfig.scale[1], nextConfig.scale[1], progressInSec)
-    const scaleZ = THREE.MathUtils.lerp(currentConfig.scale[2], nextConfig.scale[2], progressInSec)
+    let scaleX = THREE.MathUtils.lerp(currentConfig.scale[0], nextConfig.scale[0], progressInSec)
+    let scaleY = THREE.MathUtils.lerp(currentConfig.scale[1], nextConfig.scale[1], progressInSec)
+    let scaleZ = THREE.MathUtils.lerp(currentConfig.scale[2], nextConfig.scale[2], progressInSec)
+
+    // Responsive Mobile Adjustments
+    const isMobile = window.innerWidth < 768
+    if (isMobile) {
+      // 1. Scale down bottle by a factor of 0.60
+      const mobileScaleMultiplier = 0.60
+      scaleX *= mobileScaleMultiplier
+      scaleY *= mobileScaleMultiplier
+      scaleZ *= mobileScaleMultiplier
+
+      // 2. Adjust offset positions to fit vertical layouts (centering horizontally)
+      if (Math.abs(posX) > 0.4) {
+        posX = 0 // Center horizontally
+        // Push the bottle slightly up on the Y-axis so it sits above the descriptive card
+        posY = posY + 0.45 
+      }
+    }
 
     // Smoothly apply to group
     groupRef.current.position.set(
