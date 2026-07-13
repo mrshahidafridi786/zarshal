@@ -64,61 +64,61 @@ const SECTION_CONFIGS = [
   {
     position: [0, -0.05, 0],
     rotation: [0, 0, 0],
-    scale: [1.3, 1.3, 1.3],
+    scale: [0.95, 0.95, 0.95],
   },
   // 1. Brand Story
   {
     position: [1.1, -0.15, 0],
     rotation: [0.1, -Math.PI / 4, 0.05],
-    scale: [1.05, 1.05, 1.05],
+    scale: [0.8, 0.8, 0.8],
   },
   // 2. Fragrance Notes
   {
     position: [-1.2, 0.05, 0],
     rotation: [-0.05, Math.PI / 3, -0.05],
-    scale: [1.25, 1.25, 1.25],
+    scale: [0.9, 0.9, 0.9],
   },
   // 3. Ingredients
   {
     position: [0, -0.6, -1.8],
     rotation: [0.2, Math.PI, 0.1],
-    scale: [0.75, 0.75, 0.75],
+    scale: [0.65, 0.65, 0.65],
   },
   // 4. Features (Why Choose Us)
   {
     position: [1.2, -0.1, 0],
     rotation: [-0.1, -Math.PI / 6, -0.05],
-    scale: [1.1, 1.1, 1.1],
+    scale: [0.8, 0.8, 0.8],
   },
   // 5. Product Showcase (Interactive Selector)
   {
     position: [-0.75, -0.1, 0],
     rotation: [0, -Math.PI / 12, 0],
-    scale: [1.2, 1.2, 1.2],
+    scale: [0.85, 0.85, 0.85],
   },
   // 6. Luxury Experience
   {
     position: [0, 0.1, 1.2], // Zooms in very close
     rotation: [0.05, Math.PI / 2, 0],
-    scale: [2.1, 2.1, 2.1],
+    scale: [1.5, 1.5, 1.5],
   },
   // 7. Testimonials
   {
     position: [1.1, -0.15, 0],
     rotation: [0.1, -Math.PI / 4, 0],
-    scale: [1.05, 1.05, 1.05],
+    scale: [0.8, 0.8, 0.8],
   },
   // 8. FAQ
   {
     position: [-1.2, -0.05, 0],
     rotation: [-0.05, Math.PI / 3, 0],
-    scale: [1.1, 1.1, 1.1],
+    scale: [0.8, 0.8, 0.8],
   },
   // 9. CTA
   {
     position: [0.55, -0.1, 0],
     rotation: [0, -Math.PI / 8, 0],
-    scale: [1.15, 1.15, 1.15],
+    scale: [0.85, 0.85, 0.85],
   }
 ]
 
